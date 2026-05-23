@@ -10,6 +10,7 @@ if ($conexao->query($sql) === TRUE) {
 header('Location: index.php');
 } else {
 echo "Erro ao cadastrar";
+
 }
 ?>
 
