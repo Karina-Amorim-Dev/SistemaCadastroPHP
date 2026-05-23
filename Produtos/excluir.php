@@ -3,7 +3,7 @@ include 'conexao.php';
 
 $id = $_GET['id'];
 
-$sql = "DELETE FROM alunos WHERE id = $id";
+$sql = "DELETE FROM produtos WHERE id = $id";
 
 if ($conexao->query($sql) === TRUE) {
     header('Location: index.php');
