@@ -6,7 +6,7 @@
     <head>
         <meta charset="UTF-8">
         <title>CRUD PHP</title>
-        <link rel="stylesheet" href="estilo.css">
+        <link rel="stylesheet" href="../estilo.css">
     </head>
 
     <body>
