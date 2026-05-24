@@ -6,7 +6,7 @@ ini_set('display_errors', 1);
 $servidor = "127.0.0.1";
 $usuario = "root";
 $senha = "12345678";
-$banco = "Produtos";
+$banco = "sistema_cadastros";
 $porta = 3306;
 
 $conexao = mysqli_connect(
