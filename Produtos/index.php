@@ -12,6 +12,10 @@
     <body>
         <div class="container">
             <h1>Cadastro de Produtos</h1>
+
+            <a href="../index.php" class="voltar">
+            ← Voltar ao Menu Principal
+            </a>
         
         <form action="cadastrar.php" method="POST">
             <input type="text" name="nome" placeholder="Nome do Produto" required>

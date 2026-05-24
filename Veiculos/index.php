@@ -15,6 +15,10 @@
 
     <h1>Cadastro de Veículos</h1>
 
+    <a href="../index.php" class="voltar">
+    ← Voltar ao Menu Principal
+    </a>
+
     <form action="cadastrar.php" method="POST">
 
         <input type="text" name="marca" placeholder="Marca" required>
