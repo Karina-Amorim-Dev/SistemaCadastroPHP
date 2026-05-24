@@ -13,14 +13,39 @@
 
     <h1>Sistema de Cadastros</h1>
 
-    <ul>
-        <li><a href="produtos/index.php">Produtos</a></li>
-        <li><a href="clientes/index.php">Clientes</a></li>
-        <li><a href="funcionarios/index.php">Funcionários</a></li>
-        <li><a href="livros/index.php">Livros</a></li>
-        <li><a href="veiculos/index.php">Veículos</a></li>
-        <li><a href="filmes/index.php">Filmes</a></li>
-    </ul>
+    <div class="menu-grid">
+
+        <a href="produtos/index.php" class="card">
+            📦
+            <span>Produtos</span>
+        </a>
+
+        <a href="clientes/index.php" class="card">
+            👤
+            <span>Clientes</span>
+        </a>
+
+        <a href="funcionarios/index.php" class="card">
+            👨‍💼
+            <span>Funcionários</span>
+        </a>
+
+        <a href="livros/index.php" class="card">
+            📚
+            <span>Livros</span>
+        </a>
+
+        <a href="veiculos/index.php" class="card">
+            🚗
+            <span>Veículos</span>
+        </a>
+
+        <a href="filmes/index.php" class="card">
+            🎬
+            <span>Filmes</span>
+        </a>
+
+    </div>
 
 </div>
 
