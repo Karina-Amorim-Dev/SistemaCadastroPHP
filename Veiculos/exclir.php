@@ -1,13 +1,5 @@
 <?php
-include '../conexao.php';
-
-$id = $_GET['id'];
-
-$sql = "DELETE FROM veiculos WHERE id = $id";
-
-if ($conexao->query($sql) === TRUE) {
-    header('Location: index.php');
-} else {
-echo "Erro ao excluir";
-}
-?>
+// Arquivo corrigido para redirecionar para o arquivo correto de exclusão.
+// Mantemos este arquivo apenas para compatibilidade com links antigos.
+header('Location: excluir.php' . (isset($_GET['id']) ? '?id='.$_GET['id'] : ''));
+exit;
