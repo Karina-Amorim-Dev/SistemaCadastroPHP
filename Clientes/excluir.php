@@ -1,13 +1,24 @@
 <?php
 include '../conexao.php';
 
-$id = $_GET['id'];
+$id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
 
-$sql = "DELETE FROM clientes WHERE id = $id";
-
-if ($conexao->query($sql) === TRUE) {
+if ($id <= 0) {
     header('Location: index.php');
-} else {
-echo "Erro ao excluir";
+    exit;
 }
+
+$stmt = $conexao->prepare("DELETE FROM clientes WHERE id = ?");
+if (!$stmt) {
+    die('Erro na preparação: ' . $conexao->error);
+}
+$stmt->bind_param('i', $id);
+
+if ($stmt->execute()) {
+    header('Location: index.php');
+    exit;
+} else {
+    echo "Erro ao excluir: " . $stmt->error;
+}
+
 ?>
