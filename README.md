@@ -51,15 +51,27 @@ Uma aplicação simples de CRUD para demonstrar cadastro e gerenciamento de enti
    - Ou importe `banco.sql` via phpMyAdmin ou outra ferramenta.
 
 3. Configure a conexão com o banco:
-   - Há um arquivo `conexao.php` na raiz com credenciais padrão:
+   - Há um arquivo `conexao.php` na raiz com parâmetros de conexão. **Por segurança, NÃO inclua senhas reais no README nem no código versionado.**
+
+   - Exemplo (não coloque senhas reais em commits):
      ```php
      $servidor = "127.0.0.1";
      $usuario = "root";
-     $senha = "12345678";
+     $senha = "*****"; // NÃO COMMITAR SENHAS - use variáveis de ambiente ou configure localmente
      $banco = "sistema_cadastros";
      $porta = 3306;
      ```
-   - Atualize esses valores conforme seu ambiente (ou use a abordagem recomendada abaixo para variáveis de ambiente).
+
+   - Recomendado: usar variáveis de ambiente (exemplo abaixo) e não manter credenciais no repositório.
+
+     ```php
+     $servidor = getenv('DB_HOST') ?: '127.0.0.1';
+     $usuario  = getenv('DB_USER') ?: 'root';
+     $senha    = getenv('DB_PASS') ?: '';
+     $banco    = getenv('DB_NAME') ?: 'sistema_cadastros';
+     $porta    = getenv('DB_PORT') ?: 3306;
+     $conexao = mysqli_connect($servidor, $usuario, $senha, $banco, $porta);
+     ```
 
 4. Execute o servidor PHP embutido (opção rápida):
    ```
@@ -95,13 +107,7 @@ Como funciona em tempo de execução:
 ---
 
 ## Observações importantes / Pontos detectados no código
-- O arquivo `conexao.php` contém credenciais hardcoded:
-  - Host: `127.0.0.1`
-  - Usuário: `root`
-  - Senha: `12345678`
-  - Banco: `sistema_cadastros`
-  - Porta: `3306`
-  Atualize essas informações antes de rodar em produção.
+- O arquivo `conexao.php` contém parâmetros de conexão (host, usuário, senha, banco, porta). **Evite** manter senhas reais no repositório.
 - Há risco de SQL Injection: as consultas atuais concatenam diretamente variáveis do usuário (ex.: `WHERE nome LIKE '%$busca%'`), recomenda-se usar prepared statements.
 - Em `Veiculos/` o arquivo de exclusão está nomeado `exclir.php` (provável erro de digitação). Verifique e corrija para `excluir.php` para consistência.
 - Não há controle de autenticação — o sistema é aberto. Adicione login/roles se necessário.
