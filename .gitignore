@@ -1,0 +1,19 @@
+.env
+.DS_Store
+/vendor/
+/node_modules/
+/.idea/
+/.vscode/
+*.log
+
+# Environment files
+.env
+
+# OS files
+Thumbs.db
+
+# Composer
+composer.lock
+
+# PHPStorm
+.idea/
